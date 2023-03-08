@@ -622,13 +622,9 @@ function onSnapEnd () {
   board.position(game.fen());
 }
 
-function pieceTheme (piece) {
-  if (piece.search(/w/) !== -1) {
-    return 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
-  }
-  return 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
-}
-
+    function pieceTheme(piece) {
+      return 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
+    }
 var config = {
   pieceTheme: pieceTheme,
   draggable: true,
