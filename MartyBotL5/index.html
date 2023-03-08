@@ -171,11 +171,12 @@ var $martycolor = $('#martycolor');
 var martycolor = "b";
 //var ECOopening = "opening: opening";
 var start_bool = 0;
-$piecethemes2.change( function () {
+      $piecethemes2.change( function () {
         document.getElementById("chesspiecesxxx").value = $piecethemes2.val();
-	config.pieceTheme = 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/' + document.getElementById("piecethemes2").value +'/' + piece + '.png';
-	board = Chessboard('myBoard', config)
-})
+        board = Chessboard('myBoard', config);
+      })
+      
+
 
 var chessprogressval = 0;
 
@@ -633,9 +634,9 @@ function onSnapEnd () {
 	
 $chesschodae1 = $("#chesspiecesxxx").val();
 
-    function pieceTheme(piece) {
-      return 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
-    }
+      function pieceTheme(piece) {
+        return '/docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
+      }
 var config = {
   pieceTheme: pieceTheme,
   draggable: true,
