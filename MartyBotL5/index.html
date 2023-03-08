@@ -70,7 +70,7 @@
 MartyBot L5
 </p>
 <colourchange></colourchange>
-      <select id="chesspiecesxxx" onchange="document.getElementById('dispiecetheme1').setAttribute('disabled', 'disabled')">
+      <select id="piecethemes1" onchange="document.getElementById('dispiecetheme1').setAttribute('disabled', 'disabled')">
         <option id="dispiecetheme1" value="wikipedia" selected>choose your favourite chess piece theme</option>
         <option value="wikipedia">default chess pieces(wikipedia)</option>
         <option value="fromchesscom/alpha">alpha(from chess.com)</option>
@@ -80,6 +80,7 @@ MartyBot L5
         <option value="fromchesscom/neo-wood">neo-wood(from chess.com)</option>
         <option value="colourgrey-style-pieces">3D custom(colourgrey)</option>
       </select>
+	        <input type="hidden" id="chesspiecesxxx">
 <div class="text-center" style="width: 400px">
   <div class="row align-items-start">
     <div class="col">
@@ -219,6 +220,15 @@ function MartySay(say) {
   var $MartySay = $('#MartySay');
   $MartySay.html(say);
 }
+	
+      document.getElementById("chesspiecesxxx").value = "wikipedia";
+
+      $piecethemes2.change( function () {
+        document.getElementById("chesspiecesxxx").value = $piecethemes2.val();
+        board = Chessboard('myBoard', config);
+      })
+      
+
 
 MartySay('Hello? I am Marty. Would you like to play with me?');
 
