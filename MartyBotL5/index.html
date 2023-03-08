@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -70,6 +70,16 @@
 MartyBot L5
 </p>
 <colourchange></colourchange>
+      <select id="piecethemes1" onchange="document.getElementById('dispiecetheme1').setAttribute('disabled', 'disabled')">
+        <option id="dispiecetheme1" value="wikipedia" selected>choose your favourite chess piece theme</option>
+        <option value="wikipedia">default chess pieces(wikipedia)</option>
+        <option value="fromchesscom/alpha">alpha(from chess.com)</option>
+        <option value="fromchesscom/marble">marble(from chess.com)</option>
+        <option value="fromchesscom/wood">wood(from chess.com)</option>
+        <option value="fromchesscom/neo">neo(from chess.com)</option>
+        <option value="fromchesscom/neo-wood">neo-wood(from chess.com)</option>
+        <option value="colourgrey-style-pieces">3D custom(colourgrey)</option>
+      </select>
 <div class="text-center" style="width: 400px">
   <div class="row align-items-start">
     <div class="col">
@@ -612,12 +622,9 @@ function onSnapEnd () {
   board.position(game.fen());
 }
 
-function pieceTheme (piece) {
-  if (piece.search(/w/) !== -1) {
-    return 'https://urobot2011.github.io/SaveMartin/MartyBot/chessboardjs/img/chesspieces/wikipedia/' + piece + '.png';
-  }
-  return 'https://urobot2011.github.io/SaveMartin/MartyBot/chessboardjs/img/chesspieces/wikipedia/' + piece + '.png';
-}
+      function pieceTheme(piece) {
+        return 'https://chonggi-tokhu.github.ioaass//docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
+      }
 
 var config = {
   pieceTheme: pieceTheme,
