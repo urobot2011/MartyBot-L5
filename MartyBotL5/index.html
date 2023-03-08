@@ -622,9 +622,12 @@ function onSnapEnd () {
   board.position(game.fen());
 }
 
-      function pieceTheme(piece) {
-        return 'https://chonggi-tokhu.github.ioaass//docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
-      }
+function pieceTheme (piece) {
+  if (piece.search(/w/) !== -1) {
+    return 'https://urobot2011.github.io/SaveMartin/MartyBot/chessboardjs/img/chesspieces/wikipedia/' + piece + '.png';
+  }
+  return 'https://urobot2011.github.io/SaveMartin/MartyBot/chessboardjs/img/chesspieces/wikipedia/' + piece + '.png';
+}
 
 var config = {
   pieceTheme: pieceTheme,
