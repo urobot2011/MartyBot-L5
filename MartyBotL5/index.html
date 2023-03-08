@@ -173,6 +173,7 @@ var martycolor = "b";
 var start_bool = 0;
       $piecethemes2.change( function () {
         document.getElementById("chesspiecesxxx").value = $piecethemes2.val();
+	config.draggable = true;
         board = Chessboard('myBoard', config);
       })
       
