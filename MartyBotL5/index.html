@@ -1,32 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://tistory1.daumcdn.net/tistory/5499297/skin/style.css">
-  <link rel="stylesheet" href="https://tistory1.daumcdn.net/tistory/5925927/skin/style.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MartyBot L5</title>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://urobot2011.github.io/SaveMartin/MartyBot/chessboardjs/js/chessboard-1.0.0.min.js"></script>
-  <script src="https://urobot2011.github.io/SaveMartin/MartyBot/chess/chess.js"></script>
-  <script src="https://chonggi-tokhu.github.io/aass/docs/chess/chessboardxxx/js/chess.js"></script>
-  <script src="https://chonggi-tokhu.github.io/aass/docs/chess/chessboardxxx/js/chess1.js"></script>
-  <script src="https://chonggi-tokhu.github.io/aass/docs/chess/chessboardxxx/js/jquery-3.4.1.min.js"></script>
-  <script src="https://chonggi-tokhu.github.io/aass/docs/chess/chessboardxxx/js/chessboard-1.0.0.min.js"></script>
-  <script src="https://chonggi-tokhu.github.io/aass/docs/chess/martycopy1_files/chess.js"></script>
-  <script src="https://chonggi-tokhu.github.io/aass/docs/chess/martycopy1_files/chessboard-1.0.0.min.js"></script>
-  <script src="https://chonggi-tokhu.github.io/aass/docs/chess/martycopy1_files/jquery-3.4.1.min.js"></script>
-  <script src="https://chonggi-tokhu.github.io/aass/docs/chess/martycopy1_files/bootstrap.min.js"></script>
-  <script src="https://chonggi-tokhu.github.io/aass/docs/chess/martycopy1_files/popper.min.js"></script>
-  <script src="https://chonggi-tokhu.github.io/aass/docs/chess/martycopy1_files/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="https://urobot2011.github.io/SaveMartin/MartyBot/chessboardjs/css/chessboard-1.0.0.min.css">
   <style>
-	
   .chessprogressbar {
     left: 18px;
     position: absolute;
@@ -86,7 +66,6 @@
   </style>
 </head>
 <body>
-
 <p>
 MartyBot L5
 </p>
@@ -110,7 +89,7 @@ MartyBot L5
           </li>
         </ul>
       </div>
-      <div id="myBoard" style="width: 400px;position: relative;left: 30px;height:400px;"></div>
+      <div id="myBoard" style="width: 100%;position: relative;left: 30px;"></div>
     </div>
     <div class="col">
       <!--One of three columns-->
@@ -126,30 +105,8 @@ MartyBot L5
 
 <div class="card">
   <div class="card-body">
-    <div><small id="MartySay">hello i am marty5</small></div>
-    <div class="mb-3">
-      <select id="boardthemeselect">
-        <option value="default" selected>default board theme</option>
-        <option value="classic">board theme:classic</option>
-        <option value="chocolate">board theme:chocolate</option>
-        <option value="bnw">board theme:black and white</option>
-        <option value="green">board theme in colour:green</option>
-        <option value="purple">board theme in colour:purple</option>
-        <option value="blue">board theme in colour:blue</option>
-        <option value="brown">board theme in colour:brown</option>
-        <option value="orange">board theme in colour:orange</option>
-        <option value="marble">board theme in texture:marble</option>
-        <option value="goldsilver">board theme in texture:gold and silver</option>
-        <option value="walnut">board theme in texture:walnut</option>
-        <option value="wood">board theme in texture:wood</option>
-        <option value="neowood">board theme in texture:neo-wood</option>
-        <option value="ivory">board theme in texture:ivory and ebony wood</option>
-      </select>
-      <button type="button" class="btn btn-primary" onclick="colourchangeff1()" id="colourchange1">change board
-        theme</button>
-    </div>
-    <div class="mb-3">
-      <select id="piecethemes1" onchange="document.getElementById('dispiecetheme1').setAttribute('disabled', 'disabled')">
+    <MartySay></MartySay>
+          <select id="piecethemes1" onchange="document.getElementById('dispiecetheme1').setAttribute('disabled', 'disabled')">
         <option id="dispiecetheme1" value="wikipedia" selected>choose your favourite chess piece theme</option>
         <option value="wikipedia">default chess pieces(wikipedia)</option>
         <option value="fromchesscom/alpha">alpha(from chess.com)</option>
@@ -159,8 +116,6 @@ MartyBot L5
         <option value="fromchesscom/neo-wood">neo-wood(from chess.com)</option>
         <option value="colourgrey-style-pieces">3D custom(colourgrey)</option>
       </select>
-      <h5><b style="color: #ff0060;text-decoration: underline wavy;">주의:컬러그레이봇과 경기 중에는 <br> 기물테마(piece theme)를 바꾸지 마세요.<br>지금까지 뒀던 포지션이 초기화됩니다.</b></h5>
-    </div>
   </div>
 </div>
 <div class="mb-3">
@@ -192,194 +147,15 @@ MartyBot L5
   <label for="Martylog_AI" class="form-label">Martylog_AI</label>
   <textarea class="form-control" id="Martylog_AI" rows="6"></textarea>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://urobot2011.github.io/SaveMartin/MartyBot/chessboardjs/js/chessboard-1.0.0.min.js"></script>
+<script src="https://urobot2011.github.io/SaveMartin/MartyBot/chess/chess.js"></script>
 <!--<script src="https://urobot2011.github.io/ECO.js/src/ECO.js"></script>
 <script src="https://unpkg.com/brain.js"></script>-->
 <!--<script src="https://urobot2011.github.io/SaveMartin/AIdata/AIdata.js"></script>-->
 <script>
-var piecethemes = "wikipedia";
-      var $piecethemes2 = $("#piecethemes1");
-      var $colourchangebtn = $("#colourchange1");
-      var $movecommands1 = $("#inputmovecommand1");
-      document.getElementById("chesspiecesxxx").value = "wikipedia";
-
-      $colourchangebtn.click(function (piece) {
-        var selectmenu = document.getElementById("boardthemeselect").value;
-        var selectpiece = document.getElementById("piecethemes1").value;
-        var blcsquare1 = document.querySelectorAll(".black-3c85d");
-        var whtsquare1 = document.querySelectorAll(".white-1e1d7");
-        if (selectpiece == "default") {
-          piecethemes = "wikipedia";
-          config.pieceTheme = 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/wikipedia/' + piece + '.png';
-        }
-        if (selectpiece == "custom") {
-          piecethemes = "colourgrey-style-pieces"
-          config.pieceTheme = 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/colourgrey-style-pieces/' + piece + '.png';
-        }
-        for (i = 0; i < whtsquare1.length; i++) {
-          var whtsquare = whtsquare1[i];
-          if (selectmenu == "default") {
-            whtsquare.style.background = "#f0d9b5";
-            whtsquare.style.color = "#b58863";
-          }
-          if (selectmenu == "classic") {
-            whtsquare.style.background = "#e9e0ef";
-            whtsquare.style.color = "#060510";
-          }
-          if (selectmenu == "chocolate") {
-            whtsquare.style.background = "#f0d9b5";
-            whtsquare.style.color = "chocolate";
-          }
-          if (selectmenu == "bnw") {
-            whtsquare.style.background = "#f8f8f8";
-            whtsquare.style.color = "#000";
-          }
-          if (selectmenu == "green") {
-            whtsquare.style.background = "#f0d9f5";
-            whtsquare.style.color = "indigo";
-          }
-          if (selectmenu == "purple") {
-            whtsquare.style.background = "#f0d9f5";
-            whtsquare.style.color = "purple";
-          }
-          if (selectmenu == "blue") {
-            whtsquare.style.background = "#f0d9b5";
-            whtsquare.style.color = "blue";
-          }
-          if (selectmenu == "brown") {
-            whtsquare.style.background = "#f0d9ff";
-            whtsquare.style.color = "brown";
-          }
-          if (selectmenu == "orange") {
-            whtsquare.style.background = "#d0d9ff";
-            whtsquare.style.color = "orange";
-          }
-          if (selectmenu == "marble") {
-            whtsquare.style.background = "";
-            whtsquare.style.backgroundImage = "url(https://chonggi-tokhu.github.io/aass/docs/chess/img/chessboardtheme/fromchesscom/marble_whitesq.png)";
-          }
-          if (selectmenu == "goldsilver") {
-            whtsquare.style.background = "var(--silver)";
-          }
-          if (selectmenu == "ivory") {
-            whtsquare.style.background = "";
-            whtsquare.style.backgroundImage = "url(https://media.istockphoto.com/id/1412328901/photo/old-concrete-wall-texture-background-close-up-retro-plain-beige-color-cement-material-surface.jpg?b=1&s=170667a&w=0&k=20&c=_Yd94mVWR9O6JN1PKX41Zr9Fgm2cU3L0GtmKXXs2sFI=)";
-          }
-          if (selectmenu == "walnut") {
-            whtsquare.style.background = "";
-            whtsquare.style.backgroundImage = "url(https://chonggi-tokhu.github.io/aass/docs/chess/img/chessboardtheme/fromchesscom/walnut_whtsq.png)"
-          }
-        }
-        for (i = 0; i < blcsquare1.length; i++) {
-          var blcsquare = blcsquare1[i];
-          if (selectmenu == "default") {
-            blcsquare.style.background = "#b58863";
-            blcsquare.style.color = "#f0d9b5";
-          }
-          if (selectmenu == "classic") {
-            blcsquare.style.background = "radial-gradient(#888,#101527)";
-            blcsquare.style.color = "#e9e0ef";
-          }
-          if (selectmenu == "chocolate") {
-            blcsquare.style.background = "chocolate";
-            blcsquare.style.color = "#f0d9b5";
-          }
-          if (selectmenu == "bnw") {
-            blcsquare.style.background = "radial-gradient(#eee,#020202,#020202)";
-            blcsquare.style.color = "#fff";
-          }
-          if (selectmenu == "green") {
-            blcsquare.style.background = "green";
-            blcsquare.style.color = "#f0d9f5";
-          }
-          if (selectmenu == "purple") {
-            whtsquare.style.background = "#f0d9f5";
-            whtsquare.style.color = "purple";
-            blcsquare.style.background = "purple";
-            blcsquare.style.color = "#f0d9f5";
-          }
-          if (selectmenu == "blue") {
-            blcsquare.style.background = "blue";
-            blcsquare.style.color = "#f0d9b5";
-          }
-          if (selectmenu == "brown") {
-            blcsquare.style.background = "brown";
-            blcsquare.style.color = "#f0d9ff";
-          }
-          if (selectmenu == "orange") {
-            blcsquare.style.background = "orange";
-            blcsquare.style.color = "#d0d9ff";
-          }
-          if (selectmenu == "marble") {
-            blcsquare.style.background = "";
-            blcsquare.style.backgroundImage = "url(https://chonggi-tokhu.github.io/aass/docs/chess/img/chessboardtheme/fromchesscom/marble_blacksq.png)"
-          }
-          if (selectmenu == "goldsilver") {
-            blcsquare.style.background = "var(--gold)";
-          }
-          if (selectmenu == "ivory") {
-            blcsquare.style.background = "";
-            blcsquare.style.backgroundImage = "url(https://media.istockphoto.com/id/1355204884/photo/rustic-plywood-texture-background.jpg?b=1&s=170667a&w=0&k=20&c=YT3HKmr1sSpRwFhnJCUN-AlMFU5GmGQDIlwuHOqAbKc=)";
-          }
-          if (selectmenu == "walnut") {
-            blcsquare.style.background = "";
-            blcsquare.style.backgroundImage = "url(https://chonggi-tokhu.github.io/aass/docs/chess/img/chessboardtheme/fromchesscom/walnut_blsq.png)";
-          }
-        }
-        if (selectmenu == "default") {
-          whtsquare.style.background = "#f0d9b5";
-          whtsquare.style.color = "#b58863";
-          blcsquare.style.background = "#b58863";
-          blcsquare.style.color = "#f0d9b5";
-        }
-        if (selectmenu == "classic") {
-          whtsquare.style.background = "#e9e0ef";
-          whtsquare.style.color = "#060510";
-          blcsquare.style.background = "#060510";
-          blcsquare.style.color = "#e9e0ef";
-        }
-        if (selectmenu == "chocolate") {
-          whtsquare.style.background = "#f0d9b5";
-          whtsquare.style.color = "chocolate";
-          blcsquare.style.background = "chocolate";
-          blcsquare.style.color = "#f0d9b5";
-        }
-        if (selectmenu == "bnw") {
-          whtsquare.style.background = "#f8f8f8";
-          whtsquare.style.color = "#000";
-          blcsquare.style.background = "#020202";
-          blcsquare.style.color = "#fff";
-        }
-        if (selectmenu == "green") {
-          whtsquare.style.background = "#f0d9f5";
-          whtsquare.style.color = "indigo";
-          blcsquare.style.background = "green";
-          blcsquare.style.color = "#f0d9f5";
-        }
-        if (selectmenu == "purple") {
-          whtsquare.style.background = "#f0d9f5";
-          whtsquare.style.color = "purple";
-          blcsquare.style.background = "purple";
-          blcsquare.style.color = "#f0d9f5";
-        }
-        if (selectmenu == "blue") {
-          whtsquare.style.background = "#f0d9b5";
-          whtsquare.style.color = "blue";
-          blcsquare.style.background = "blue";
-          blcsquare.style.color = "#f0d9b5";
-        }
-        if (selectmenu == "brown") {
-          whtsquare.style.background = "#f0d9ff";
-          whtsquare.style.color = "brown";
-          blcsquare.style.background = "brown";
-          blcsquare.style.color = "#f0d9ff";
-        }
-        if (selectmenu == "orange") {
-          whtsquare.style.background = "#d0d9ff";
-          whtsquare.style.color = "orange";
-          blcsquare.style.background = "orange";
-          blcsquare.style.color = "#d0d9ff";
-        }
-      })
 var board;
 var game = new Chess();
 //var ECO = new ECO(game);
@@ -440,7 +216,7 @@ $('.square-55d63').each(function (index, item){
 });	
 
 function MartySay(say) {
-  var $MartySay = $('#MartySay');
+  var $MartySay = $('MartySay');
   $MartySay.html(say);
 }
 
@@ -828,14 +604,14 @@ async function updateStatus() {
   $chessprogressbar.attr("progress", 100-(49+evaluateBoard(game.board())));
   chessprogressbar();
 }
-  
+
 function onDrop (source, target) {
   var move = game.move({
     from: source,
     to: target,
     promotion: 'q'
   });
-  
+
   if (move === null) return 'snapback';
   window.setTimeout(makeMove, 250);
 }
@@ -849,6 +625,8 @@ function onSnapEnd () {
       function pieceTheme(piece) {
         return 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
       }
+
+
 var config = {
   pieceTheme: pieceTheme,
   draggable: true,
