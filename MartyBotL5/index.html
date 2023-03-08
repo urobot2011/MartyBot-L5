@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://tistory1.daumcdn.net/tistory/5499297/skin/style.css">
+  <link rel="stylesheet" href="https://tistory1.daumcdn.net/tistory/5925927/skin/style.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MartyBot L5</title>
@@ -66,6 +68,198 @@
   </style>
 </head>
 <body>
+	<script>
+		var piecethemes = "wikipedia";
+      var $piecethemes2 = $("#piecethemes1");
+      var $colourchangebtn = $("#colourchange1");
+      var $movecommands1 = $("#inputmovecommand1");
+      document.getElementById("chesspiecesxxx").value = "wikipedia";
+
+      $piecethemes2.change( function () {
+        document.getElementById("chesspiecesxxx").value = $piecethemes2.val();
+        board = Chessboard('myBoard', config);
+      })
+      
+
+      $colourchangebtn.click(function (piece) {
+        var selectmenu = document.getElementById("boardthemeselect").value;
+        var selectpiece = document.getElementById("piecethemes1").value;
+        var blcsquare1 = document.querySelectorAll(".black-3c85d");
+        var whtsquare1 = document.querySelectorAll(".white-1e1d7");
+        if (selectpiece == "default") {
+          piecethemes = "wikipedia";
+          config.pieceTheme = 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/wikipedia/' + piece + '.png';
+        }
+        if (selectpiece == "custom") {
+          piecethemes = "colourgrey-style-pieces"
+          config.pieceTheme = 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/colourgrey-style-pieces/' + piece + '.png';
+        }
+        for (i = 0; i < whtsquare1.length; i++) {
+          var whtsquare = whtsquare1[i];
+          if (selectmenu == "default") {
+            whtsquare.style.background = "#f0d9b5";
+            whtsquare.style.color = "#b58863";
+          }
+          if (selectmenu == "classic") {
+            whtsquare.style.background = "#e9e0ef";
+            whtsquare.style.color = "#060510";
+          }
+          if (selectmenu == "chocolate") {
+            whtsquare.style.background = "#f0d9b5";
+            whtsquare.style.color = "chocolate";
+          }
+          if (selectmenu == "bnw") {
+            whtsquare.style.background = "#f8f8f8";
+            whtsquare.style.color = "#000";
+          }
+          if (selectmenu == "green") {
+            whtsquare.style.background = "#f0d9f5";
+            whtsquare.style.color = "indigo";
+          }
+          if (selectmenu == "purple") {
+            whtsquare.style.background = "#f0d9f5";
+            whtsquare.style.color = "purple";
+          }
+          if (selectmenu == "blue") {
+            whtsquare.style.background = "#f0d9b5";
+            whtsquare.style.color = "blue";
+          }
+          if (selectmenu == "brown") {
+            whtsquare.style.background = "#f0d9ff";
+            whtsquare.style.color = "brown";
+          }
+          if (selectmenu == "orange") {
+            whtsquare.style.background = "#d0d9ff";
+            whtsquare.style.color = "orange";
+          }
+          if (selectmenu == "marble") {
+            whtsquare.style.background = "";
+            whtsquare.style.backgroundImage = "url(https://chonggi-tokhu.github.io/aass/docs/chess/img/chessboardtheme/fromchesscom/marble_whitesq.png)";
+          }
+          if (selectmenu == "goldsilver") {
+            whtsquare.style.background = "var(--silver)";
+          }
+          if (selectmenu == "ivory") {
+            whtsquare.style.background = "";
+            whtsquare.style.backgroundImage = "url(https://media.istockphoto.com/id/1412328901/photo/old-concrete-wall-texture-background-close-up-retro-plain-beige-color-cement-material-surface.jpg?b=1&s=170667a&w=0&k=20&c=_Yd94mVWR9O6JN1PKX41Zr9Fgm2cU3L0GtmKXXs2sFI=)";
+          }
+          if (selectmenu == "walnut") {
+            whtsquare.style.background = "";
+            whtsquare.style.backgroundImage = "url(https://chonggi-tokhu.github.io/aass/docs/chess/img/chessboardtheme/fromchesscom/walnut_whtsq.png)"
+          }
+        }
+        for (i = 0; i < blcsquare1.length; i++) {
+          var blcsquare = blcsquare1[i];
+          if (selectmenu == "default") {
+            blcsquare.style.background = "#b58863";
+            blcsquare.style.color = "#f0d9b5";
+          }
+          if (selectmenu == "classic") {
+            blcsquare.style.background = "radial-gradient(#888,#101527)";
+            blcsquare.style.color = "#e9e0ef";
+          }
+          if (selectmenu == "chocolate") {
+            blcsquare.style.background = "chocolate";
+            blcsquare.style.color = "#f0d9b5";
+          }
+          if (selectmenu == "bnw") {
+            blcsquare.style.background = "radial-gradient(#eee,#020202,#020202)";
+            blcsquare.style.color = "#fff";
+          }
+          if (selectmenu == "green") {
+            blcsquare.style.background = "green";
+            blcsquare.style.color = "#f0d9f5";
+          }
+          if (selectmenu == "purple") {
+            whtsquare.style.background = "#f0d9f5";
+            whtsquare.style.color = "purple";
+            blcsquare.style.background = "purple";
+            blcsquare.style.color = "#f0d9f5";
+          }
+          if (selectmenu == "blue") {
+            blcsquare.style.background = "blue";
+            blcsquare.style.color = "#f0d9b5";
+          }
+          if (selectmenu == "brown") {
+            blcsquare.style.background = "brown";
+            blcsquare.style.color = "#f0d9ff";
+          }
+          if (selectmenu == "orange") {
+            blcsquare.style.background = "orange";
+            blcsquare.style.color = "#d0d9ff";
+          }
+          if (selectmenu == "marble") {
+            blcsquare.style.background = "";
+            blcsquare.style.backgroundImage = "url(https://chonggi-tokhu.github.io/aass/docs/chess/img/chessboardtheme/fromchesscom/marble_blacksq.png)"
+          }
+          if (selectmenu == "goldsilver") {
+            blcsquare.style.background = "var(--gold)";
+          }
+          if (selectmenu == "ivory") {
+            blcsquare.style.background = "";
+            blcsquare.style.backgroundImage = "url(https://media.istockphoto.com/id/1355204884/photo/rustic-plywood-texture-background.jpg?b=1&s=170667a&w=0&k=20&c=YT3HKmr1sSpRwFhnJCUN-AlMFU5GmGQDIlwuHOqAbKc=)";
+          }
+          if (selectmenu == "walnut") {
+            blcsquare.style.background = "";
+            blcsquare.style.backgroundImage = "url(https://chonggi-tokhu.github.io/aass/docs/chess/img/chessboardtheme/fromchesscom/walnut_blsq.png)";
+          }
+        }
+        if (selectmenu == "default") {
+          whtsquare.style.background = "#f0d9b5";
+          whtsquare.style.color = "#b58863";
+          blcsquare.style.background = "#b58863";
+          blcsquare.style.color = "#f0d9b5";
+        }
+        if (selectmenu == "classic") {
+          whtsquare.style.background = "#e9e0ef";
+          whtsquare.style.color = "#060510";
+          blcsquare.style.background = "#060510";
+          blcsquare.style.color = "#e9e0ef";
+        }
+        if (selectmenu == "chocolate") {
+          whtsquare.style.background = "#f0d9b5";
+          whtsquare.style.color = "chocolate";
+          blcsquare.style.background = "chocolate";
+          blcsquare.style.color = "#f0d9b5";
+        }
+        if (selectmenu == "bnw") {
+          whtsquare.style.background = "#f8f8f8";
+          whtsquare.style.color = "#000";
+          blcsquare.style.background = "#020202";
+          blcsquare.style.color = "#fff";
+        }
+        if (selectmenu == "green") {
+          whtsquare.style.background = "#f0d9f5";
+          whtsquare.style.color = "indigo";
+          blcsquare.style.background = "green";
+          blcsquare.style.color = "#f0d9f5";
+        }
+        if (selectmenu == "purple") {
+          whtsquare.style.background = "#f0d9f5";
+          whtsquare.style.color = "purple";
+          blcsquare.style.background = "purple";
+          blcsquare.style.color = "#f0d9f5";
+        }
+        if (selectmenu == "blue") {
+          whtsquare.style.background = "#f0d9b5";
+          whtsquare.style.color = "blue";
+          blcsquare.style.background = "blue";
+          blcsquare.style.color = "#f0d9b5";
+        }
+        if (selectmenu == "brown") {
+          whtsquare.style.background = "#f0d9ff";
+          whtsquare.style.color = "brown";
+          blcsquare.style.background = "brown";
+          blcsquare.style.color = "#f0d9ff";
+        }
+        if (selectmenu == "orange") {
+          whtsquare.style.background = "#d0d9ff";
+          whtsquare.style.color = "orange";
+          blcsquare.style.background = "orange";
+          blcsquare.style.color = "#d0d9ff";
+        }
+      })
+	</script>
 <p>
 MartyBot L5
 </p>
@@ -102,6 +296,46 @@ MartyBot L5
     </div>
   </div>
 </div>
+	
+    <div class="mb-3">
+      <select id="boardthemeselect">
+        <option value="default" selected>default board theme</option>
+        <option value="classic">board theme:classic</option>
+        <option value="chocolate">board theme:chocolate</option>
+        <option value="bnw">board theme:black and white</option>
+        <option value="green">board theme in colour:green</option>
+        <option value="purple">board theme in colour:purple</option>
+        <option value="blue">board theme in colour:blue</option>
+        <option value="brown">board theme in colour:brown</option>
+        <option value="orange">board theme in colour:orange</option>
+        <option value="marble">board theme in texture:marble</option>
+        <option value="goldsilver">board theme in texture:gold and silver</option>
+        <option value="walnut">board theme in texture:walnut</option>
+        <option value="wood">board theme in texture:wood</option>
+        <option value="neowood">board theme in texture:neo-wood</option>
+        <option value="ivory">board theme in texture:ivory and ebony wood</option>
+      </select>
+      <button type="button" class="btn btn-primary" onclick="colourchangeff1()" id="colourchange1">change board
+        theme</button>
+    </div>
+    <div class="mb-3">
+      <select id="piecethemes1" onchange="document.getElementById('dispiecetheme1').setAttribute('disabled', 'disabled')">
+        <option id="dispiecetheme1" value="wikipedia" selected>choose your favourite chess piece theme</option>
+        <option value="wikipedia">default chess pieces(wikipedia)</option>
+        <option value="fromchesscom/alpha">alpha(from chess.com)</option>
+        <option value="fromchesscom/marble">marble(from chess.com)</option>
+        <option value="fromchesscom/wood">wood(from chess.com)</option>
+        <option value="fromchesscom/neo">neo(from chess.com)</option>
+        <option value="fromchesscom/neo-wood">neo-wood(from chess.com)</option>
+        <option value="colourgrey-style-pieces">3D custom(colourgrey)</option>
+      </select>
+      <h5><b style="color: #ff0060;text-decoration: underline wavy;">주의:컬러그레이봇과 경기 중에는 <br> 기물테마(piece theme)를 바꾸지 마세요.<br>지금까지 뒀던 포지션이 초기화됩니다.</b></h5>
+      <h3>
+        <a href="/index.php">이곳에서 게시판에 포스팅을 작성할수 있습니다. 이 컬그봇에 대해 생각이 든 점을 자유롭게 써주세요.</a>
+        <br>
+        <a href="/postlist.php">이곳에서 게시글 목록을 확인할수 있습니다.</a>
+      </h3>
+    </div>
 
 <div class="card">
   <div class="card-body">
@@ -612,13 +846,9 @@ function onSnapEnd () {
   board.position(game.fen());
 }
 
-function pieceTheme (piece) {
-  if (piece.search(/w/) !== -1) {
-    return 'https://urobot2011.github.io/SaveMartin/MartyBot/chessboardjs/img/chesspieces/wikipedia/' + piece + '.png';
-  }
-  return 'https://urobot2011.github.io/SaveMartin/MartyBot/chessboardjs/img/chesspieces/wikipedia/' + piece + '.png';
-}
-
+      function pieceTheme(piece) {
+        return 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
+      }
 var config = {
   pieceTheme: pieceTheme,
   draggable: true,
