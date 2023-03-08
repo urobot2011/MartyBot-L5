@@ -173,7 +173,6 @@ var martycolor = "b";
 var start_bool = 0;
 $piecethemes2.change( function () {
         document.getElementById("chesspiecesxxx").value = $piecethemes2.val();
-	config.pieceTheme = 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
         board = Chessboard('myBoard', config);
 })
 
