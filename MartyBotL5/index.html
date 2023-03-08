@@ -70,7 +70,7 @@
 MartyBot L5
 </p>
 <colourchange></colourchange>
-      <select id="piecethemes1" onchange="document.getElementById('dispiecetheme1').setAttribute('disabled', 'disabled')">
+      <select id="chesspiecesxxx" onchange="document.getElementById('dispiecetheme1').setAttribute('disabled', 'disabled')">
         <option id="dispiecetheme1" value="wikipedia" selected>choose your favourite chess piece theme</option>
         <option value="wikipedia">default chess pieces(wikipedia)</option>
         <option value="fromchesscom/alpha">alpha(from chess.com)</option>
@@ -624,9 +624,9 @@ function onSnapEnd () {
 
 function pieceTheme (piece) {
   if (piece.search(/w/) !== -1) {
-    return 'https://urobot2011.github.io/SaveMartin/MartyBot/chessboardjs/img/chesspieces/wikipedia/' + piece + '.png';
+    return 'https://q0.r-e.kr/docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
   }
-  return 'https://urobot2011.github.io/SaveMartin/MartyBot/chessboardjs/img/chesspieces/wikipedia/' + piece + '.png';
+  return 'https://q0.r-e.kr/docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
 }
 
 var config = {
