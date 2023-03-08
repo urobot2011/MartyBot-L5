@@ -201,12 +201,6 @@ var piecethemes = "wikipedia";
       var $movecommands1 = $("#inputmovecommand1");
       document.getElementById("chesspiecesxxx").value = "wikipedia";
 
-      $piecethemes2.change( function () {
-        document.getElementById("chesspiecesxxx").value = $piecethemes2.val();
-        board = Chessboard('myBoard', config);
-      })
-      
-
       $colourchangebtn.click(function (piece) {
         var selectmenu = document.getElementById("boardthemeselect").value;
         var selectpiece = document.getElementById("piecethemes1").value;
