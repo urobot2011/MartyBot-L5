@@ -70,7 +70,7 @@
 MartyBot L5
 </p>
 <colourchange></colourchange>
-      <select id="piecethemes1" onchange="document.getElementById('chesspiecesxxx').value = $piecethemes2.val();">
+      <select id="piecethemes1">
         <option id="dispiecetheme1" value="wikipedia" selected>choose your favourite chess piece theme</option>
         <option value="wikipedia">default chess pieces(wikipedia)</option>
         <option value="fromchesscom/alpha">alpha(from chess.com)</option>
@@ -171,6 +171,10 @@ var $martycolor = $('#martycolor');
 var martycolor = "b";
 //var ECOopening = "opening: opening";
 var start_bool = 0;
+$piecethemes2.change( function () {
+        document.getElementById("chesspiecesxxx").value = $piecethemes2.val();
+        board = Chessboard('myBoard', config);
+})
 
 var chessprogressval = 0;
 
