@@ -307,7 +307,7 @@ MartyBot L5
 
 <div class="card">
   <div class="card-body">
-    <MartySay></MartySay>
+    <div><small id="MartySay">hello i am marty5</small></div>
     <div class="mb-3">
       <select id="boardthemeselect">
         <option value="default" selected>default board theme</option>
@@ -447,7 +447,7 @@ $('.square-55d63').each(function (index, item){
 });	
 
 function MartySay(say) {
-  var $MartySay = $('MartySay');
+  var $MartySay = $('#MartySay');
   $MartySay.html(say);
 }
 
