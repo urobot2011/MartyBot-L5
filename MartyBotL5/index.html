@@ -78,8 +78,116 @@
   </style>
 </head>
 <body>
-	<script>
-		var piecethemes = "wikipedia";
+
+<p>
+MartyBot L5
+</p>
+<div class="text-center" style="width: 400px">
+  <div class="row align-items-start">
+    <div class="col">
+      MartyBot L5
+    </div>
+    <div class="col">
+      <!--One of three columns-->
+    </div>
+    <div class="col">
+      <!--One of three columns-->
+    </div>
+    <div class="container" style="position: relative;">
+      <div class="chessprogressbar">
+        <ul>
+          <li style="left: 0px;">
+           <span class="progressbar" style="left: 0px;" progress="50" id="chessprogressbar"></span>
+          </li>
+        </ul>
+      </div>
+      <div id="myBoard" style="width: 400px;position: relative;left: 30px;height:400px;"></div>
+    </div>
+    <div class="col">
+      <!--One of three columns-->
+    </div>
+    <div class="col">
+      <!--One of three columns-->
+    </div>
+    <div class="col">
+      <!--One of three columns-->
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div><small id="MartySay">hello i am marty5</small></div>
+    <div class="mb-3">
+      <select id="boardthemeselect">
+        <option value="default" selected>default board theme</option>
+        <option value="classic">board theme:classic</option>
+        <option value="chocolate">board theme:chocolate</option>
+        <option value="bnw">board theme:black and white</option>
+        <option value="green">board theme in colour:green</option>
+        <option value="purple">board theme in colour:purple</option>
+        <option value="blue">board theme in colour:blue</option>
+        <option value="brown">board theme in colour:brown</option>
+        <option value="orange">board theme in colour:orange</option>
+        <option value="marble">board theme in texture:marble</option>
+        <option value="goldsilver">board theme in texture:gold and silver</option>
+        <option value="walnut">board theme in texture:walnut</option>
+        <option value="wood">board theme in texture:wood</option>
+        <option value="neowood">board theme in texture:neo-wood</option>
+        <option value="ivory">board theme in texture:ivory and ebony wood</option>
+      </select>
+      <button type="button" class="btn btn-primary" onclick="colourchangeff1()" id="colourchange1">change board
+        theme</button>
+    </div>
+    <div class="mb-3">
+      <select id="piecethemes1" onchange="document.getElementById('dispiecetheme1').setAttribute('disabled', 'disabled')">
+        <option id="dispiecetheme1" value="wikipedia" selected>choose your favourite chess piece theme</option>
+        <option value="wikipedia">default chess pieces(wikipedia)</option>
+        <option value="fromchesscom/alpha">alpha(from chess.com)</option>
+        <option value="fromchesscom/marble">marble(from chess.com)</option>
+        <option value="fromchesscom/wood">wood(from chess.com)</option>
+        <option value="fromchesscom/neo">neo(from chess.com)</option>
+        <option value="fromchesscom/neo-wood">neo-wood(from chess.com)</option>
+        <option value="colourgrey-style-pieces">3D custom(colourgrey)</option>
+      </select>
+      <h5><b style="color: #ff0060;text-decoration: underline wavy;">주의:컬러그레이봇과 경기 중에는 <br> 기물테마(piece theme)를 바꾸지 마세요.<br>지금까지 뒀던 포지션이 초기화됩니다.</b></h5>
+    </div>
+  </div>
+</div>
+<div class="mb-3">
+  <label for="wn" class="form-label">백 이름</label>
+  <input type="text" class="form-control" id="wn" placeholder="이름(아이디)" value="seoha">
+  <!--<label for="bn" class="form-label">흑 이름</label>
+  <input type="text" class="form-control" id="bn" placeholder="name@example.com">-->
+</div>
+<div class="mb-3">
+<label for="martycolor" class="form-label">봇의 색</label>
+<select class="form-select" aria-label="봇의 색" id = "martycolor">
+  <option selected value="b">흑</option>
+  <option value="w">백</option>
+</select>
+</div>
+<div class="mb-3">
+<button type="button" class="btn btn-primary" id="start">start</button>
+</div>
+<label>FEN:</label>
+<div id="fen"></div>
+<label>PGN:</label>
+<div id="pgn"></div>
+<div id="ECOopening">opening: null</div>
+<div class="mb-3">
+  <label for="Martylog" class="form-label">Martylog</label>
+  <textarea class="form-control" id="Martylog" rows="6"></textarea>
+</div>
+<div class="mb-3"><!--</div> style="display: none;">-->
+  <label for="Martylog_AI" class="form-label">Martylog_AI</label>
+  <textarea class="form-control" id="Martylog_AI" rows="6"></textarea>
+</div>
+<!--<script src="https://urobot2011.github.io/ECO.js/src/ECO.js"></script>
+<script src="https://unpkg.com/brain.js"></script>-->
+<!--<script src="https://urobot2011.github.io/SaveMartin/AIdata/AIdata.js"></script>-->
+<script>
+var piecethemes = "wikipedia";
       var $piecethemes2 = $("#piecethemes1");
       var $colourchangebtn = $("#colourchange1");
       var $movecommands1 = $("#inputmovecommand1");
@@ -269,115 +377,6 @@
           blcsquare.style.color = "#d0d9ff";
         }
       })
-	</script>
-<p>
-MartyBot L5
-</p>
-<div class="text-center" style="width: 400px">
-  <div class="row align-items-start">
-    <div class="col">
-      MartyBot L5
-    </div>
-    <div class="col">
-      <!--One of three columns-->
-    </div>
-    <div class="col">
-      <!--One of three columns-->
-    </div>
-    <div class="container" style="position: relative;">
-      <div class="chessprogressbar">
-        <ul>
-          <li style="left: 0px;">
-           <span class="progressbar" style="left: 0px;" progress="50" id="chessprogressbar"></span>
-          </li>
-        </ul>
-      </div>
-      <div id="myBoard" style="width: 400px;position: relative;left: 30px;height:400px;"></div>
-    </div>
-    <div class="col">
-      <!--One of three columns-->
-    </div>
-    <div class="col">
-      <!--One of three columns-->
-    </div>
-    <div class="col">
-      <!--One of three columns-->
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-body">
-    <div><small id="MartySay">hello i am marty5</small></div>
-    <div class="mb-3">
-      <select id="boardthemeselect">
-        <option value="default" selected>default board theme</option>
-        <option value="classic">board theme:classic</option>
-        <option value="chocolate">board theme:chocolate</option>
-        <option value="bnw">board theme:black and white</option>
-        <option value="green">board theme in colour:green</option>
-        <option value="purple">board theme in colour:purple</option>
-        <option value="blue">board theme in colour:blue</option>
-        <option value="brown">board theme in colour:brown</option>
-        <option value="orange">board theme in colour:orange</option>
-        <option value="marble">board theme in texture:marble</option>
-        <option value="goldsilver">board theme in texture:gold and silver</option>
-        <option value="walnut">board theme in texture:walnut</option>
-        <option value="wood">board theme in texture:wood</option>
-        <option value="neowood">board theme in texture:neo-wood</option>
-        <option value="ivory">board theme in texture:ivory and ebony wood</option>
-      </select>
-      <button type="button" class="btn btn-primary" onclick="colourchangeff1()" id="colourchange1">change board
-        theme</button>
-    </div>
-    <div class="mb-3">
-      <select id="piecethemes1" onchange="document.getElementById('dispiecetheme1').setAttribute('disabled', 'disabled')">
-        <option id="dispiecetheme1" value="wikipedia" selected>choose your favourite chess piece theme</option>
-        <option value="wikipedia">default chess pieces(wikipedia)</option>
-        <option value="fromchesscom/alpha">alpha(from chess.com)</option>
-        <option value="fromchesscom/marble">marble(from chess.com)</option>
-        <option value="fromchesscom/wood">wood(from chess.com)</option>
-        <option value="fromchesscom/neo">neo(from chess.com)</option>
-        <option value="fromchesscom/neo-wood">neo-wood(from chess.com)</option>
-        <option value="colourgrey-style-pieces">3D custom(colourgrey)</option>
-      </select>
-      <h5><b style="color: #ff0060;text-decoration: underline wavy;">주의:컬러그레이봇과 경기 중에는 <br> 기물테마(piece theme)를 바꾸지 마세요.<br>지금까지 뒀던 포지션이 초기화됩니다.</b></h5>
-    </div>
-  </div>
-</div>
-<div class="mb-3">
-  <label for="wn" class="form-label">백 이름</label>
-  <input type="text" class="form-control" id="wn" placeholder="이름(아이디)" value="seoha">
-  <!--<label for="bn" class="form-label">흑 이름</label>
-  <input type="text" class="form-control" id="bn" placeholder="name@example.com">-->
-</div>
-<div class="mb-3">
-<label for="martycolor" class="form-label">봇의 색</label>
-<select class="form-select" aria-label="봇의 색" id = "martycolor">
-  <option selected value="b">흑</option>
-  <option value="w">백</option>
-</select>
-</div>
-<div class="mb-3">
-<button type="button" class="btn btn-primary" id="start">start</button>
-</div>
-<label>FEN:</label>
-<div id="fen"></div>
-<label>PGN:</label>
-<div id="pgn"></div>
-<div id="ECOopening">opening: null</div>
-<div class="mb-3">
-  <label for="Martylog" class="form-label">Martylog</label>
-  <textarea class="form-control" id="Martylog" rows="6"></textarea>
-</div>
-<div class="mb-3"><!--</div> style="display: none;">-->
-  <label for="Martylog_AI" class="form-label">Martylog_AI</label>
-  <textarea class="form-control" id="Martylog_AI" rows="6"></textarea>
-</div>
-<!--<script src="https://urobot2011.github.io/ECO.js/src/ECO.js"></script>
-<script src="https://unpkg.com/brain.js"></script>-->
-<!--<script src="https://urobot2011.github.io/SaveMartin/AIdata/AIdata.js"></script>-->
-<script>
 var board;
 var game = new Chess();
 //var ECO = new ECO(game);
