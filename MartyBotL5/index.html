@@ -637,45 +637,103 @@ function onSnapEnd () {
       function pieceTheme(piece) {
         return 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
       }
-var config = {
-  pieceTheme: pieceTheme,
-  draggable: true,
-  position: 'start',
-  onDragStart: onDragStart,
-  onDrop: onDrop,
-  onSnapEnd: onSnapEnd
-};
-board = Chessboard('myBoard', config);
-// add
-board.addCircle = function(to){
-  var $circle = $("[data-square='"+to+"']");
-  if($circle != undefined){
-    var circle = $circle.html();
-    if(!circle.includes("img")){
-      $circle.html($circle.html()+"<chess-circle></chess-circle>");
-    } else {
-      //$circle.html(circle + "<chess-eat></chess-eat>");
-      $circle.addClass('highlight-black');
-    }
-  } else {
-    return null;
-  }
-};
-board.clearCircles = function(){
-  var $circles = $("[data-square]");
-  if($circles != undefined){
-    $circles.each(function(index, element){
-      var circle = $(element).html();
-      circle = circle.replace('<chess-circle></chess-circle>', '');
-      circle = circle.replace('<chess-eat></chess-eat>', '');
-      $(element).html(circle);
-      $(element).removeClass('highlight-black');
-    });
-  } else {
-    return null;
-  }
-};
-board = Chessboard('myBoard', config);
+	
+      document.getElementById("chesspiecesxxx").value = 'wikipedia';
+
+      var config = {
+        pieceTheme: pieceTheme,
+        draggable: true,
+        position: 'start',
+        onDragStart: onDragStart,
+        onDrop: onDrop,
+        onSnapEnd: onSnapEnd
+      };
+      board = Chessboard('myBoard', config);
+      board.addCircle = function(to) {
+          var $circle = $("[data-square='" + to + "']");
+          if ($circle != undefined) {
+            var circle = $circle.html();
+            if (!circle.includes("img")) {
+              $circle.html($circle.html() + "<chess-circle></chess-circle>");
+            } else {
+              //$circle.html(circle + "<chess-eat></chess-eat>");
+              $circle.addClass('highlight-black');
+            }
+          } else {
+            return null;
+          }
+        };
+        board.clearCircles = function() {
+          var $circles = $("[data-square]");
+          if ($circles != undefined) {
+            $circles.each(function (index, element) {
+              var circle = $(element).html();
+              circle = circle.replace('<chess-circle></chess-circle>', '');
+              circle = circle.replace('<chess-eat></chess-eat>', '');
+              $(element).html(circle);
+              $(element).removeClass('highlight-black');
+            });
+          } else {
+            return null;
+          }
+        };
+        function onDragStart(source, piece, position, orientation) {
+          board.addCircle = function (to) {
+            var $circle = $("[data-square='" + to + "']");
+            if ($circle != undefined) {
+              var circle = $circle.html();
+              if (!circle.includes("img")) {
+                $circle.html($circle.html() + "<chess-circle></chess-circle>");
+              } else {
+                //$circle.html(circle + "<chess-eat></chess-eat>");
+                $circle.addClass('highlight-black');
+              }
+            } else {
+              return null;
+            }
+          };
+          board.clearCircles = function () {
+            var $circles = $("[data-square]");
+            if ($circles != undefined) {
+              $circles.each(function (index, element) {
+                var circle = $(element).html();
+                circle = circle.replace('<chess-circle></chess-circle>', '');
+                circle = circle.replace('<chess-eat></chess-eat>', '');
+                $(element).html(circle);
+                $(element).removeClass('highlight-black');
+              });
+            } else {
+              return null;
+            }
+          };
+            if (game.game_over()) return false;
+            if (piece.search(/^${martycolor}/) !== -1) return false;
+            board.clearCircles();
+            game.moves({ source, verbose: true }).forEach(function (element) {
+              if (element.from == source) {
+                board.addCircle(element.to);
+                var $source = $("[data-square='" + element.to + "']");
+                $source.click(function () {
+                  onDrop(source, element.to);
+                  onSnapEnd();
+                });
+                $source = $source.find("[data-piece]");
+                if ($source != undefined) {
+                  $source.click(function () {
+                    onDrop(source, element.to);
+                    onSnapEnd();
+                  });
+                }
+              }
+            });
+          }
+        
+        
+        document.getElementById("piecethemes1").onchange =  function () {
+            document.getElementById("chesspiecesxxx").value = document.getElementById("piecethemes1").value;
+            board = Chessboard('myBoard', config);
+        }
+
 </script>
 <script src="https://urobot2011.github.io/SaveMartin/MartyBot/colorugrey/changeTheme.js"></script>
 </body>
