@@ -158,7 +158,7 @@ MartyBot L5
 <script src="https://unpkg.com/brain.js"></script>-->
 <!--<script src="https://urobot2011.github.io/SaveMartin/AIdata/AIdata.js"></script>-->
 <script>
-var board;
+var board = Chessboard('myBoard', config);
 var game = new Chess();
 //var ECO = new ECO(game);
 var $board = $('#myBoard');
@@ -675,7 +675,7 @@ board.clearCircles = function(){
     return null;
   }
 };
-
+board = Chessboard('myBoard', config);
 </script>
 <script src="https://urobot2011.github.io/SaveMartin/MartyBot/colorugrey/changeTheme.js"></script>
 </body>
