@@ -172,11 +172,10 @@ var $martycolor = $('#martycolor');
 var martycolor = "b";
 //var ECOopening = "opening: opening";
 var start_bool = 0;
-      $piecethemes2.change( function () {
-        document.getElementById("chesspiecesxxx").value = $piecethemes2.val();
-	config.draggable = true;
-        board = Chessboard('myBoard', config);
-      })
+$piecethemes2.change( function () {
+  document.getElementById("chesspiecesxxx").value = $piecethemes2.val();
+  board = Chessboard('myBoard', config);
+})
       
 
 
@@ -634,7 +633,6 @@ function onSnapEnd () {
   board.position(game.fen());
 }
 	
-$chesschodae1 = $("#chesspiecesxxx").val();
 
       function pieceTheme(piece) {
         return 'https://chonggi-tokhu.github.io/aass/docs/chess/img/chesspieces/' + document.getElementById("chesspiecesxxx").value +'/' + piece + '.png';
